@@ -1,0 +1,48 @@
+<form name="createForm" role="form" novalidate (ngSubmit)="save()" #createForm="ngForm">
+    <div class="modal-header">
+        <h4 class="modal-title" id="myAppointmentLabel">Create an Appointment</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+            (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group">
+            <label class="form-control-label" for="field_reason">Reason</label>
+            <input type="text" class="form-control" name="reason" id="field_reason"
+                   [(ngModel)]="appointment.reason" required />
+            <div [hidden]="!(createForm.controls.reason?.dirty && createForm.controls.reason?.invalid)">
+                <small class="form-text text-danger" [hidden]="!createForm.controls.reason?.errors?.required">
+                    This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_insuranceChange">Insurance Change</label>
+            <input type="checkbox" class="form-control" name="insuranceChange" id="field_insuranceChange"
+               [(ngModel)]="appointment.insuranceChange"  />
+            <div [hidden]="!(createForm.controls.insuranceChange?.dirty && createForm.controls.insuranceChange?.invalid)">
+                <small class="form-text text-danger" [hidden]="!createForm.controls.insuranceChange?.errors?.required">
+                    This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_phoneNumber">Phone Number</label>
+            <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                   [(ngModel)]="appointment.phoneNumber" required />
+            <div [hidden]="!(createForm.controls.phoneNumber?.dirty && createForm.controls.phoneNumber?.invalid)">
+                <small class="form-text text-danger"
+                       [hidden]="!createForm.controls.phoneNumber?.errors?.required">
+                    This field is required.
+                </small>
+            </div>
+        </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="createForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

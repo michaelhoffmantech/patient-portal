@@ -1,0 +1,36 @@
+<div>
+    <h2>
+        <span>Appointments</span>
+        <button class="btn btn-primary float-right create-appointment"
+            [routerLink]="['/', { outlets: { popup: ['patient-appointments-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span>Create New Appointment</span>
+        </button>
+    </h2>
+    <!-- JHipster generated alerts component from /shared/alert -->
+    <jhi-alert></jhi-alert>
+    <div class="row"></div>
+    <br />
+    <!-- Display the list of appointments from the server -->
+    <div class="table-responsive" *ngIf="appointments">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Reason</span></th>
+                    <th><span>Insurance Change</span></th>
+                    <th><span>Phone Number</span></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let appointment of appointments; trackBy: trackId">
+                    <td>{{appointment.id}}</td>
+                    <td>{{appointment.reason}}</td>
+                    <td>{{appointment.insuranceChange}}</td>
+                    <td>{{appointment.phoneNumber}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

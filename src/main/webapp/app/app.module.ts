@@ -9,6 +9,7 @@ import { PatientPortalHomeModule } from './home/home.module';
 import { PatientPortalAdminModule } from './admin/admin.module';
 import { PatientPortalAccountModule } from './account/account.module';
 import { PatientPortalEntityModule } from './entities/entity.module';
+import { PatientPortalPatientModule } from './patient/patient.module';
 
 import { customHttpProvider } from './blocks/interceptor/http.provider';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
@@ -35,6 +36,7 @@ import {
         PatientPortalAdminModule,
         PatientPortalAccountModule,
         PatientPortalEntityModule,
+        PatientPortalPatientModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
