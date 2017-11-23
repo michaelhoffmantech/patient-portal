@@ -23,7 +23,7 @@ spring:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:sqlserver://localhost:1433;database=PatientPortal
         username: SA
-        password: yourStrong(!)Password
+        password: Password1!
         hikari:
             data-source-properties:
                 cachePrepStmts: true
